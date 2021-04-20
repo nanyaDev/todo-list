@@ -1,5 +1,6 @@
 import data from './data';
-import { renderToDos } from './todo';
+import { isToday, isThisWeek } from 'date-fns';
+import { renderToDos } from './render';
 
 const inbox = document.querySelector('#inbox');
 const day = document.querySelector('#day');
@@ -11,11 +12,11 @@ inbox.addEventListener('click', event => {
 });
 
 day.addEventListener('click', event => {
-  const todos = data.getToDos();
+  const todos = data.getToDos().filter(todo => isToday(todo.due));
   renderToDos(todos);
 });
 
 week.addEventListener('click', event => {
-  const todos = data.getToDos();
+  const todos = data.getToDos().filter(todo => isThisWeek(todo.due));
   renderToDos(todos);
 });

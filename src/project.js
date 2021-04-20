@@ -1,5 +1,6 @@
 import { newElement } from './helper';
 import data from './data';
+import { renderToDos } from './render';
 
 const nav = document.querySelector('nav');
 
@@ -8,6 +9,13 @@ const createNavItem = (text, icon, ...classes) => {
   const i = newElement('i', 'fas', icon);
   const span = newElement('span');
   span.textContent = text;
+
+  if (icon !== 'fa-plus') {
+    div.addEventListener('click', e => {
+      const todos = data.getProject(text);
+      renderToDos(todos, text);
+    });
+  }
 
   div.append(i, span);
   nav.appendChild(div);

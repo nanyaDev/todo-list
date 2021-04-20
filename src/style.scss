@@ -98,6 +98,8 @@ main {
 
   &:hover {
     transform: scale(1.005);
+    box-shadow: 0 1px 0 1px $secondary;
+    transition: all 0.1s ease-out;
   }
 
   .checkbox {
@@ -142,5 +144,71 @@ main {
       background-repeat: no-repeat;
       border-color: $primary;
     }
+  }
+}
+
+.new-to-do {
+  display: flex;
+  justify-content: center;
+  border: 1px solid $primary;
+  color: $primary;
+  font-weight: 500;
+
+  .fa-plus {
+    margin-right: 10px;
+  }
+
+  &:hover {
+    transform: scale(1.005);
+    box-shadow: 0 1px 0 0 $primary;
+    transition: all 0.1s ease-out;
+  }
+}
+
+.to-do-form {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  font-weight: 400;
+
+  > * {
+    margin-left: 35px;
+    height: 21px;
+    color: $charcoal;
+  }
+
+  > input {
+    border: none;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .name {
+    flex-grow: 2;
+  }
+
+  .date {
+    width: auto;
+    border-block: none;
+
+    &::-webkit-calendar-picker-indicator {
+      margin-left: -20px;
+    }
+  }
+
+  .submit {
+    height: 16px;
+    width: 16px;
+    margin-top: 2px;
+    background: url(/docs/assets/checkmark.svg);
+    background-size: 10px;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-color: green;
+    border: none;
+    border-radius: 50%;
   }
 }

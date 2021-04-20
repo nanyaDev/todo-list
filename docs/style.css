@@ -84,6 +84,8 @@ main {
 }
 .to-do:hover {
   transform: scale(1.005);
+  box-shadow: 0 1px 0 1px #f3f5f7;
+  transition: all 0.1s ease-out;
 }
 .to-do .checkbox {
   width: 1.2em;
@@ -120,4 +122,61 @@ main {
   background-position: 50% 50%;
   background-repeat: no-repeat;
   border-color: #1862c2;
+}
+
+.new-to-do {
+  display: flex;
+  justify-content: center;
+  border: 1px solid #1862c2;
+  color: #1862c2;
+  font-weight: 500;
+}
+.new-to-do .fa-plus {
+  margin-right: 10px;
+}
+.new-to-do:hover {
+  transform: scale(1.005);
+  box-shadow: 0 1px 0 0 #1862c2;
+  transition: all 0.1s ease-out;
+}
+
+.to-do-form {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  font-weight: 400;
+}
+.to-do-form > * {
+  margin-left: 35px;
+  height: 21px;
+  color: #303336;
+}
+.to-do-form > input {
+  border: none;
+}
+.to-do-form > input:focus {
+  outline: none;
+}
+.to-do-form .name {
+  flex-grow: 2;
+}
+.to-do-form .date {
+  width: auto;
+  border-block: none;
+}
+.to-do-form .date::-webkit-calendar-picker-indicator {
+  margin-left: -20px;
+}
+.to-do-form .submit {
+  height: 16px;
+  width: 16px;
+  margin-top: 2px;
+  background: url(/docs/assets/checkmark.svg);
+  background-size: 10px;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-color: green;
+  border: none;
+  border-radius: 50%;
 }

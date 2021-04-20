@@ -36,6 +36,22 @@ const data = (() => {
     ],
   };
 
+  const createToDo = (todo, project = null) => {
+    if (project) {
+      projects[project].push(todo);
+    } else {
+      projects['Misc'].push(todo);
+    }
+
+    console.log(projects);
+  };
+
+  const deleteToDo = () => {};
+
+  const getProject = project => {
+    return projects[project];
+  };
+
   const getProjects = () => {
     return Object.keys(projects).filter(project => project !== 'Misc');
   };
@@ -48,15 +64,23 @@ const data = (() => {
     projects[project] = [];
   };
 
-  const createToDo = () => {};
-  const deleteToDo = () => {};
+  const toggleImportance = name => {
+    getToDos().find(todo => todo.name === name).important ^= true;
+  };
+
+  const toggleDone = name => {
+    getToDos().find(todo => todo.name === name).done ^= true;
+  };
 
   return {
+    createToDo,
+    deleteToDo,
+    getProject,
     getProjects,
     getToDos,
     newProject,
-    createToDo,
-    deleteToDo,
+    toggleImportance,
+    toggleDone,
   };
 })();
 

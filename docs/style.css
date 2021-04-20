@@ -116,7 +116,7 @@ main {
   text-decoration: line-through;
 }
 .to-do.done .checkbox {
-  background: url(/docs/assets/checkmark.svg);
+  background: url(docs/assets/checkmark.svg);
   background-color: #1862c2;
   background-size: 10px;
   background-position: 50% 50%;
@@ -172,7 +172,7 @@ main {
   height: 16px;
   width: 16px;
   margin-top: 2px;
-  background: url(/docs/assets/checkmark.svg);
+  background: url(docs/assets/checkmark.svg);
   background-size: 10px;
   background-position: 50% 50%;
   background-repeat: no-repeat;
